@@ -1,0 +1,26 @@
+import Foundation 
+
+let array : [Int?] = [22, 12, nil, 7, nil]
+//optional binding
+var sum = 0
+
+for index in 0..<array.count {
+if let unwrap = array[index] {
+sum += unwrap
+}
+}
+print(sum)
+
+//forced unwrapping
+for index in 0..<array.count {
+if array[index] != nil {
+sum += array[index]! 
+}
+}
+print(sum)
+
+//??
+for index in 0..<array.count {
+sum += array[index] ?? 0
+}
+print(sum)

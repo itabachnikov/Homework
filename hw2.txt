@@ -1,0 +1,32 @@
+import Foundation 
+
+var dict : [String:Int] = ["student1" : 4, "student2" : 2, "student3" : 5, "student4" : 3] 
+//1 
+print(dict) 
+
+dict["student2"] = 3 
+dict["student1"] = 5 
+//2 
+print(dict) 
+
+dict["student5"] = 3 
+dict["student6"] = 4 
+
+print(dict) 
+//3 
+dict["student4"] = nil 
+dict["student3"] = nil 
+
+print(dict) 
+
+var sum = 0 
+
+
+for (index, value) in dict { 
+sum += value 
+} 
+
+print(sum) 
+
+var sum1 : Double = Double(sum) / Double(dict.count) 
+print(sum1)

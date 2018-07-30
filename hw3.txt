@@ -1,0 +1,10 @@
+import Foundation 
+
+var alfa = "abcdefghijklomnopqrstuvwxyz" 
+var array = [String]() 
+
+for i in alfa { 
+array.insert(String(i), at: 0) 
+} 
+
+print(array)
