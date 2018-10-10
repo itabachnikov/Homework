@@ -24,7 +24,7 @@ class Human {
     let firstName: String
     let lastName: String?
     
-    init(firstName: String, lastName: String) {
+    init(firstName: String, lastName: String?) {
         self.firstName = firstName
         self.lastName = lastName
     }
@@ -35,12 +35,12 @@ class Human {
 class Student : Human {
     let courseOfStudy : Int
     
-    init(firstName: String, lastName: String, courseOfStudy: Int) {
+    init(firstName: String, lastName: String?, courseOfStudy: Int) {
         self.courseOfStudy = courseOfStudy
         super.init(firstName: firstName, lastName: lastName)
     }
     
-    convenience override init(firstName: String, lastName: String) {
+    convenience override init(firstName: String, lastName: String?) {
         self.init(firstName: firstName, lastName: lastName, courseOfStudy: 1)
     }
 }
@@ -51,12 +51,25 @@ let student1 = Student(firstName: "Ivan", lastName: "Ivanov")
 //Создать класс Бомж, наследуемся от класса Студент, у бомжа должен быть инициализатор с именем, который будет принимать значение по умолчанию = "Бомж", в итоге после инициализации класса через init() у объекта должны быть проинициализированы значения со следующими значениями: имя = Бомж, фамилия должна быть nil, курс = 1
 
 class Homeless : Student {
-    convenience override init(firstName: String, lastName: String?, courseOfStudy: Int) {
-        self.init(firstName: "Homeless", lastName: nil, courseOfStudy: 1)
+    init() {
+        super.init(firstName: "Homeless", lastName: nil, courseOfStudy: 1)
     }
 }
+    
+let homeless = Homeless()
 
-let bich = Homeless(firstName: "test", lastName: "test", courseOfStudy: 9)
+homeless.firstName
+homeless.lastName
+homeless.courseOfStudy
+
+
+//    convenience override init(firstName: String, lastName: String?, courseOfStudy: Int) {
+//        self.init(firstName: "Homeless", lastName: nil, courseOfStudy: 1)
+//    }
+//}
+
+
+
 
 
 //Task 3.
@@ -84,4 +97,3 @@ b1.name
 let b2 = BestBank(symbol: "R")
 b2.name
 
-//
