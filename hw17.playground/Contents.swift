@@ -55,7 +55,7 @@ class Homeless : Student {
         super.init(firstName: "Homeless", lastName: nil, courseOfStudy: 1)
     }
 }
-    
+
 let homeless = Homeless()
 
 homeless.firstName
@@ -63,37 +63,27 @@ homeless.lastName
 homeless.courseOfStudy
 
 
-//    convenience override init(firstName: String, lastName: String?, courseOfStudy: Int) {
-//        self.init(firstName: "Homeless", lastName: nil, courseOfStudy: 1)
-//    }
-//}
-
-
-
-
-
 //Task 3.
 //Создать класс BestBank, который инициализируется символом и содержит свойство Имя, если инициализировать данный класс символом "Т", то значение свойства Имя должно быть "Тинькофф", при попытке инициализации другим символом должно вернуться nil (то есть класс не должен инициализироваться вовсе)
 
 class BestBank {
     
-    let symbol: Character
-    let name: String?
+    let name: String
     
-    init(symbol: Character) {
-        self.symbol = symbol
+    init?(symbol: Character) {
         if symbol == "T" {
             name = "Tinkoff"
         } else {
-            name = nil
+            return nil
         }
     }
 }
 
 
-let b1 = BestBank(symbol: "T")
-b1.name
+let bankOne = BestBank(symbol: "T")
+bankOne?.name
 
-let b2 = BestBank(symbol: "R")
-b2.name
+let bankTwo = BestBank(symbol: "R")
+bankTwo
+bankTwo?.name
 
