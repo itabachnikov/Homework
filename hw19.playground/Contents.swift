@@ -16,11 +16,7 @@ extension Int {
     }
     //2. Добавьте свойство, которое возвращает количество символов в числе
     var symbols: Int {
-        var symbols = 0
-        for _ in String(self) {
-            symbols += 1
-        }
-        return symbols
+        return String(self).count
     }
     //3. Добавьте метод, который возвращает символ числа по индексу:
     func symbOfInt(_ index: Int) -> String? {
@@ -46,7 +42,7 @@ c.isZero
 
 //2
 
-let f = 135416
+let f = 13541
 
 f.symbols
 
@@ -62,7 +58,7 @@ extension String {
     func truncate(_ length: Int) -> String {
         let strInt = String(self)
         if strInt.count > length {
-            return String(strInt.prefix(length) + "...")
+            return strInt.prefix(length) + "..."
         } else {
             return self
         }
